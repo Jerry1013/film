@@ -1,0 +1,73 @@
+
+<div class="detail_menu_block" ng-init="filmDetail();getCategories();getHouses()">
+<div class="detail_menu">
+<ul>
+<li ng-repeat="category in categories">
+    <a ui-sref="index({id : category.cateId})" ng-if="$index<9">{{category.cateName}}</a>
+</li>
+</ul>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="detail_cont_block">
+<div class="detail_cont_C_b">
+<div class="detail_Left_c"><img ng-src="{{film.filmPoster}}"></div>
+<div class="detail_Right_c">
+<div class="detail_RightBc">
+<div class="detail_RightBct1">
+
+<h2>{{film.filmName}}</h2>
+</div>
+
+<dl>
+<dt>首映</dt>
+<dd>{{film.firstPlayDate | date : 'yyyy-MM-dd'}}</dd>
+<dt>类型</dt>
+<dd>{{film.filmProperty}}</dd>
+<dt>版本</dt>
+<dd>{{film.filmEdition}}</dd>
+<dt>地区</dt>
+<dd>{{film.filmArea}}</dd>
+<dt>时长</dt>
+<dd>{{film.filmLong}}</dd>
+<dt>导演</dt>
+<dd>{{film.filmDirector}}</dd>
+<dt>主演</dt>
+<dd>{{film.filmActor}}</dd>
+</dl>
+</div>
+<div class="detail_RightBct2">
+<div class="detail_RightBct2I">
+<div class="dy_Dr_left1">观影人数：</div>
+<div class="dy_Dr_Ri1"><select class="dy_dr_rs_i" name="">
+  <option>2人</option>
+  <option>3人</option>
+  <option>4人</option>
+</select></div>
+</div>
+<div class="detail_RightBct2I">
+<div class="dy_Dr_left1">选择房间：</div>
+<div class="dy_Dr_Ri1">
+        <select class="dy_dr_rs_i" ng-model="selectedHse" ng-options="house.houseName for house in houses track by house.houseId">
+        </select>
+    </div>
+</div>
+
+</div>
+<div class="pt_btn_block">
+<div class="pt_btnone">普通价：180元</div>
+    <!--
+<div class="VIP_btnone">会员价：150元</div>
+-->
+</div>
+<div class="succes_btnn" ng-click="order()">提交</div>
+</div>
+</div>
+<div class="dy_little_b">
+<div class="dy_line"></div>
+<h2>剧情</h2>
+<p>{{film.filmInfo}}</p>
+</div>
+<div class="clear"></div>
+</div>

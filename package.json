@@ -1,0 +1,20 @@
+{
+  "name": "film",
+  "version": "1.0.0",
+  "description": "film bar",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install"
+  },
+  "author": "Jerry tao",
+  "license": "ISC",
+  "dependencies": {
+    "ejs-mate": "^2.1.0",
+    "express": "^4.10.6",
+    "request": "^2.51.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.10.2"
+  }
+}

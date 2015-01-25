@@ -1,0 +1,42 @@
+<div class="content_block" ng-init="getCategories()">
+  <div class="content_Left">
+<div class="con_left_m_b">
+<ul>
+  <li ng-repeat="category in categories" ng-class="{'bot_15px' : $last}">
+    <a ui-sref="index({})"  ng-click="getFilms(category.cateId)">{{category.cateName}}</a>
+  </li>
+</ul>
+</div>
+</div>
+<div class="content_Right">
+<div class="content_Right_img">
+  <img src="/public/images/ad.jpg">
+</div>
+<div class="content_Right_tab">
+<div class="tab">
+  <ul class="tabs">
+    <li ng-repeat="category in categories">
+      <a href=""  ng-click="getFilms(category.cateId)" ng-if="category.isNav==1" href="#">{{category.cateName}}</a>
+    </li>
+  </ul>
+  <!-- / tabs -->
+  <div class="tab_content">
+    <div class="tabs_item">
+    <div class="tabs_C_list">
+        <div class="tabs_C_pic1"  ng-repeat="film in films">
+            <div class="tab_img_1">
+                <a ui-sref="detail({ id: film.filmId})"><img ng-src="{{film.filmPoster}}"></a>
+            </div>
+            <div class="huiyuanjia"></div>
+            <div class="huiyuan_little">{{film.filmName}}</div>
+        </div>
+    </div>
+    </div>
+  </div>
+  <!-- / tab_content -->
+</div>
+    <!--infinite scroll directive-->
+    <infinite-scroll get-List="loadFilms()"></infinite-scroll>
+</div>
+</div>
+</div>
